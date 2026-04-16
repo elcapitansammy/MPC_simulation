@@ -16,16 +16,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Generate a procedurally generated racetrack')
     parser.add_argument('--track_3D', type=bool, default=False, help='Create 3D racetrack or not')
     parser.add_argument('--seed', type=int, help='Specificy int32 seed')
-    parser.add_argument('--screen_x', type=int, default=100, help='The screen width for raylib')
-    parser.add_argument('--screen_y', type=int, default=100, help='The screen height for raylib')
+    parser.add_argument('--screen_x', type=int, default=1280, help='The screen width for raylib')
+    parser.add_argument('--screen_y', type=int, default=720, help='The screen height for raylib')
     args = parser.parse_args()
 
-    seed = np.random.randint(0, 2**32)
+    seed = np.random.randint(0, 2**23)
     if args.seed:
         seed = args.seed
     np.random.seed(seed)
 
     track = createtrack.CreateTrack(num_points=10, x_bounds=[0,100], y_bounds=[0,100], corner_cells=15,seed=seed)
+    print(track)
     points = track.create_racetrack(args.track_3D)
 
     if args.track_3D == False :
