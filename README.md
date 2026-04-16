@@ -30,3 +30,5 @@ A custom dark-themed GUI that allows for "Scientific Tuning" of the vehicle:
 2. Install the required math and physics stacks:
    ```bash
    pip install numpy scipy matplotlib
+
+3. Run mpc_car_gui.py
