@@ -37,3 +37,7 @@ The MPC has been upgraded with "Physical Foresight" to prevent the common issue 
 2. Install the required math and physics stacks:
    ```bash
    pip install numpy scipy matplotlib
+
+
+## Update 
+I added a unified, that takes care of every model in one GUI the others will be removed as soon as the unified is tested more. Please use the Unified, for also looking at boundaries 
