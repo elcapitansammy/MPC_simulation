@@ -4,7 +4,7 @@ This repository is an advanced evolution of the procedural track generation logi
 
 While the original project was focused on drawing paths, this version implements a high-performance **Model Predictive Control (MPC)** simulation environment designed to handle high-speed racing with realistic physical constraints.
 
-> **Note on the UI:** Claude handled the CSS-in-Python hex codes and button padding. I focused on the math that keeps the car from hitting Mach 2.2 on a hair-pin turn.
+> **Note on the UI:** Claude handled the CSS-in-Python hex codes and button padding. I have better things to do than making pretty buttons
 
 ## 🚀 Key Enhancements
 
