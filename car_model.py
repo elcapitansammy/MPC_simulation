@@ -52,13 +52,13 @@ class CarDynamics4Wheel:
         alpha_f = delta_final - beta
         alpha_r = -np.arctan2(self.Lr * self.w, self.v)
 
-        # Linear tire forces (Matching the 80k constant in your MPC)
-        Fy_f = -80000 * alpha_f
-        Fy_r = -80000 * alpha_r
+        # Linear tire forces
+        Fy_f = -self.Ca_f * alpha_f
+        Fy_r = -self.Ca_r * alpha_r
 
         # 4. Integrate State
         # Note: We use the v that was just updated (self.v)
-        self.w += (self.Lf * Fy_f * np.cos(delta_final) - self.Lr * Fy_r) / 3000 * dt
+        self.w += (self.Lf * Fy_f * np.cos(delta_final) - self.Lr * Fy_r) / self.Iz * dt
         self.theta += self.w * dt
         self.x += self.v * np.cos(self.theta) * dt
         self.y += self.v * np.sin(self.theta) * dt

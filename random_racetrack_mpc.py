@@ -147,7 +147,7 @@ def generate_track_for_mpc(num_points=12, x_bounds=[0, 200], y_bounds=[0, 200], 
     final_track = resample_track_for_mpc(raw_points, step_distance=step_distance)
     return final_track
 
-def generate_random_track_for_mpc_with_boundaries(num_points=12, x_bounds=[0, 200], y_bounds=[0, 200], corner_cells=20, step_distance=1.0, track_width=3.0):
+def generate_random_track_for_mpc_with_boundaries(num_points=12, x_bounds=[0, 100], y_bounds=[0, 100], corner_cells=20, step_distance=1.0, track_width=3.0):
     midpoints = generate_track_for_mpc(num_points=num_points, x_bounds=x_bounds, y_bounds=y_bounds, corner_cells=corner_cells, step_distance=step_distance)
     left_boundary, right_boundary = generate_track_boundaries(midpoints, width=track_width)
     left_resampled, right_resampled = resample_boundaries(left_boundary, right_boundary, step_distance)
